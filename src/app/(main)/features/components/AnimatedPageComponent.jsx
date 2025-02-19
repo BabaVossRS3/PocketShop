@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Store, Settings, CreditCard, BarChart3, Cloud, Image, Smartphone, Shield, Users, ShoppingBag, Zap } from 'lucide-react';
 
+// Features and steps data remain the same...
 // Features data
 const features = [
   { title: "Προσωποποιημένο Subdomain", description: "Αποκτήστε το δικό σας μοναδικό κατάστημα στο yourshop.pocketshop.gr", icon: Store },
@@ -31,8 +32,6 @@ const steps = [
     icon: Zap
   }
 ];
-
-// Animation variants for different sections
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 60 },
   visible: {
@@ -60,37 +59,37 @@ const FeatureCard = ({ feature, index }) => (
     variants={fadeUpVariants}
     className="h-full"
   >
-    <div className="border border-[#1B4D3E] bg-[#2C3930] hover:border-[#16FF00] transition-colors h-full p-6 rounded-lg">
-      <div className="h-12 w-12 rounded-lg bg-[#16FF00]/10 flex items-center justify-center mb-4">
-        <feature.icon className="h-6 w-6 text-[#16FF00]" />
+    <div className="border border-[#A9B5DF] bg-white hover:border-[#7886C7] transition-colors h-full p-6 rounded-lg">
+      <div className="h-12 w-12 rounded-lg bg-[#A9B5DF]/10 flex items-center justify-center mb-4">
+        <feature.icon className="h-6 w-6 text-[#7886C7]" />
       </div>
-      <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-      <p className="text-[#F8F5E9]">{feature.description}</p>
+      <h3 className="text-xl font-semibold text-[#2D336B] mb-2">{feature.title}</h3>
+      <p className="text-[#2D336B]/80">{feature.description}</p>
     </div>
   </motion.div>
 );
 
 const AnimatedPage = () => {
   return (
-    <div className="min-h-screen bg-[#242424]">
+    <div className="min-h-screen bg-[#FFF2F2]">
       {/* Hero Section */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerVariants}
-        className="h-[80vh] flex items-center justify-center px-6 border-b border-[#1B4D3E]"
+        className="h-[40vh] flex items-center justify-center px-6 border-b border-[#A9B5DF]"
       >
         <div className="max-w-5xl mx-auto text-center space-y-8">
           <motion.h1 
             variants={fadeUpVariants}
-            className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white"
+            className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-[#2D336B]"
           >
-            Όλα τα <span className="text-[#16FF00]">Εργαλεία</span> που Χρειάζεστε
+            Όλα τα <span className="text-[#7886C7]">Εργαλεία</span> που Χρειάζεστε
           </motion.h1>
           <motion.p 
             variants={fadeUpVariants}
-            className="mx-auto max-w-[600px] text-[#F8F5E9] text-lg md:text-xl"
+            className="mx-auto max-w-[600px] text-[#2D336B]/80 text-lg md:text-xl"
           >
             Ανακαλύψτε τα χαρακτηριστικά που κάνουν το PocketShop την ιδανική πλατφόρμα για το online κατάστημά σας
           </motion.p>
@@ -123,14 +122,14 @@ const AnimatedPage = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerVariants}
-        className="py-20 px-6 border-t border-[#1B4D3E]"
+        className="py-20 px-6 border-t border-[#A9B5DF]"
       >
         <div className="max-w-5xl mx-auto">
           <motion.div variants={fadeUpVariants} className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl font-bold tracking-tight text-[#2D336B] mb-4">
               Πώς Λειτουργεί
             </h2>
-            <p className="text-[#F8F5E9] text-lg">
+            <p className="text-[#2D336B]/80 text-lg">
               Ξεκινήστε το δικό σας online κατάστημα σε τρία απλά βήματα
             </p>
           </motion.div>
@@ -145,11 +144,11 @@ const AnimatedPage = () => {
                 variants={fadeUpVariants}
                 className="text-center space-y-4"
               >
-                <div className="h-16 w-16 rounded-full bg-[#16FF00]/10 flex items-center justify-center mx-auto">
-                  <step.icon className="h-8 w-8 text-[#16FF00]" />
+                <div className="h-16 w-16 rounded-full bg-[#A9B5DF]/10 flex items-center justify-center mx-auto">
+                  <step.icon className="h-8 w-8 text-[#7886C7]" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">{step.title}</h3>
-                <p className="text-[#F8F5E9]">{step.description}</p>
+                <h3 className="text-xl font-semibold text-[#2D336B]">{step.title}</h3>
+                <p className="text-[#2D336B]/80">{step.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -162,18 +161,18 @@ const AnimatedPage = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerVariants}
-        className="py-20 px-6 border-t border-[#1B4D3E]"
+        className="py-20 px-6 border-t border-[#A9B5DF]"
       >
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <motion.h2 
             variants={fadeUpVariants}
-            className="text-3xl font-bold tracking-tight text-white"
+            className="text-3xl font-bold tracking-tight text-[#2D336B]"
           >
             Έτοιμοι να Ξεκινήσετε;
           </motion.h2>
           <motion.p 
             variants={fadeUpVariants}
-            className="text-[#F8F5E9] text-lg"
+            className="text-[#2D336B]/80 text-lg"
           >
             Δημιουργήστε το κατάστημά σας σήμερα και ξεκινήστε να πουλάτε online
           </motion.p>
@@ -181,10 +180,10 @@ const AnimatedPage = () => {
             variants={fadeUpVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <button className="px-6 py-3 text-lg bg-[#16FF00] text-[#242424] hover:bg-[#06D001] rounded-lg">
+            <button className="px-6 py-3 text-lg bg-[#7886C7] text-[#FFF2F2] hover:bg-[#2D336B] rounded-lg">
               Δημιουργία Καταστήματος
             </button>
-            <button className="px-6 py-3 text-lg text-[#16FF00] border border-[#16FF00] hover:bg-[#16FF00] hover:text-[#242424] rounded-lg">
+            <button className="px-6 py-3 text-lg text-[#7886C7] border border-[#7886C7] hover:bg-[#7886C7] hover:text-[#FFF2F2] rounded-lg">
               Δείτε τις Τιμές
             </button>
           </motion.div>

@@ -1,4 +1,4 @@
-'use client';  // Add this at the top
+'use client';
 
 import { motion } from 'framer-motion';
 import { Store, Settings, CreditCard, BarChart3, Cloud, Image, Smartphone, Shield } from 'lucide-react';
@@ -31,15 +31,15 @@ const FeatureGrid = () => (
             viewport={{ once: true }}
             whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 400 } }}
           >
-            <Card className="border border-[#1B4D3E] bg-[#242424] hover:border-[#16FF00] transition-colors h-full">
+            <Card className="border bg-white hover:border-[#7886C7] transition-colors h-full">
               <CardHeader>
-                <div className="h-12 w-12 rounded-lg bg-[#16FF00]/10 flex items-center justify-center mb-4">
-                  <feature.icon className="h-6 w-6 text-[#16FF00]" />
+                <div className="h-12 w-12 rounded-lg bg-[#A9B5DF]/10 flex items-center justify-center mb-4">
+                  <feature.icon className="h-6 w-6 text-[#7886C7]" />
                 </div>
-                <CardTitle className="text-white">{feature.title}</CardTitle>
+                <CardTitle className="text-[#2D336B]">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-[#F8F5E9]">{feature.description}</p>
+                <p className="text-[#2D336B]/80">{feature.description}</p>
               </CardContent>
             </Card>
           </motion.div>

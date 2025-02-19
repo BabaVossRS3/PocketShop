@@ -22,13 +22,13 @@ export default async function RootLayout({ children }) {
         <AuthProvider>
           <LoadingProvider>
             {isShopSubdomain ? (
-              <div className="relative flex flex-col min-h-screen bg-[#242424]">
+              <div className="relative flex flex-col min-h-screen bg-[#FFF2F2]">
                 <ShopNav className="relative z-10" />
                 <main className="flex-1 relative z-10">{children}</main>
                 <ShopFooter className="relative z-10" />
               </div>
             ) : (
-              <div className="relative flex flex-col min-h-screen bg-[#242424]">
+              <div className="relative flex flex-col min-h-screen bg-[#FFF2F2]">
                 <MainNav className="relative z-10" />
                 <main className="flex-1 relative z-10">{children}</main>
                 <Footer className="relative z-10" />

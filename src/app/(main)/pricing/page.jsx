@@ -61,14 +61,14 @@ const pricingPlans = [
 
 const PricingPage = () => {
   return (
-    <div className="min-h-screen bg-[#242424] py-20">
+    <div className="min-h-screen bg-[#FFF2F2] py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-[#F8F5E9] mt-20 mb-10">
-            Απλή & <span className="text-[#16FF00]">Ξεκάθαρη</span> Τιμολόγηση
+          <h1 className="text-4xl font-bold text-[#2D336B] mt-20 mb-10">
+            Απλή & <span className="text-[#7886C7]">Ξεκάθαρη</span> Τιμολόγηση
           </h1>
-          <p className="text-xl text-[#F8F5E9]">
+          <p className="text-xl text-[#2D336B]/80">
             Επιλέξτε το ιδανικό πακέτο για την επιχείρησή σας
           </p>
         </div>
@@ -78,34 +78,34 @@ const PricingPage = () => {
           {pricingPlans.map((plan) => (
             <Card 
               key={plan.name}
-              className={`relative flex flex-col bg-[#242424] ${
-                plan.popular ? 'border-2 border-[#16FF00] shadow-lg' : 'border border-[#06D001]'
+              className={`relative flex flex-col bg-white ${
+                plan.popular ? 'border-2 border-[#7886C7] shadow-lg' : 'border border-[#A9B5DF]'
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-0 right-0 mx-auto w-48 text-center">
-                  <span className="bg-[#16FF00] text-[#242424] px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-[#7886C7] text-white px-3 py-1 rounded-full text-sm font-medium">
                     Δημοφιλής Επιλογή
                   </span>
                 </div>
               )}
               
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-[#F8F5E9]">{plan.name}</CardTitle>
-                <CardDescription className="text-[#F8F5E9]/80">{plan.description}</CardDescription>
+                <CardTitle className="text-2xl font-bold text-[#2D336B]">{plan.name}</CardTitle>
+                <CardDescription className="text-[#2D336B]/70">{plan.description}</CardDescription>
               </CardHeader>
               
               <CardContent className="flex-grow">
                 <div className="mb-6 text-center">
-                  <span className="text-4xl text-center font-bold text-[#16FF00]">{plan.price}€</span>
-                  <span className="text-[#F8F5E9]/80 ml-2">/μήνα</span>
+                  <span className="text-4xl text-center font-bold text-[#7886C7]">{plan.price}€</span>
+                  <span className="text-[#2D336B]/70 ml-2">/μήνα</span>
                 </div>
                 
                 <ul className="space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2">
-                      <Check className="h-5 w-5 text-[#16FF00] flex-shrink-0" />
-                      <span className="text-[#F8F5E9]/90">{feature}</span>
+                      <Check className="h-5 w-5 text-[#7886C7] flex-shrink-0" />
+                      <span className="text-[#2D336B]/80">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -115,8 +115,8 @@ const PricingPage = () => {
                 <Button 
                   className={`w-full ${
                     plan.popular 
-                      ? 'bg-[#16FF00] hover:bg-[#06D001] text-[#242424]' 
-                      : 'bg-[#06D001] hover:bg-[#16FF00] text-[#242424]'
+                      ? 'bg-[#7886C7] hover:bg-[#2D336B] text-white' 
+                      : 'bg-[#A9B5DF] hover:bg-[#7886C7] text-white'
                   }`}
                 >
                   {plan.buttonText}
@@ -128,10 +128,10 @@ const PricingPage = () => {
 
         {/* FAQ or Additional Info */}
         <div className="text-center mt-16">
-          <p className="text-[#F8F5E9]/80">
+          <p className="text-[#2D336B]/80">
             Όλα τα πακέτα περιλαμβάνουν: ασφαλείς πληρωμές, προσαρμοσμένο domain και βασική υποστήριξη.
             <br />
-            Χρειάζεστε βοήθεια; <span className="text-[#16FF00] hover:text-[#06D001] cursor-pointer">Επικοινωνήστε μαζί μας</span>
+            Χρειάζεστε βοήθεια; <span className="text-[#7886C7] hover:text-[#2D336B] cursor-pointer">Επικοινωνήστε μαζί μας</span>
           </p>
         </div>
       </div>

@@ -19,13 +19,13 @@ const ParticlesBackground = () => {
             }
           },
           color: {
-            value: ['#727D73', '#AAB99A', '#D0DDD0'] // New softer, happier colors
+            value: '#2D336B' // Darkest color for particles
           },
           shape: {
             type: 'circle',
             stroke: {
               width: 0,
-              color: '#727D73' // Muted Olive Green
+              color: '#2D336B'
             }
           },
           opacity: {
@@ -51,13 +51,13 @@ const ParticlesBackground = () => {
           line_linked: {
             enable: true,
             distance: 150,
-            color: '#AAB99A', // Light Olive
+            color: '#7886C7', // Second darkest color for lines
             opacity: 0.4,
             width: 1
           },
           move: {
             enable: true,
-            speed: 6,
+            speed: 2,
             direction: 'none',
             random: false,
             straight: false,
@@ -109,7 +109,7 @@ const ParticlesBackground = () => {
   return (
     <div 
       id="particles-js" 
-      className="fixed inset-0 z-0 bg-[#D0DDD0]" // Lighter background color for better integration
+      className="fixed inset-0 z-0 bg-[#FFF2F2]" // Updated to the new background color
       style={{ 
         position: 'fixed',
         width: '100%',
