@@ -1,0 +1,5 @@
+#16FF00 - neon green
+#06D001 - green
+#242424 - background black 
+#F8F5E9 - some text
+#1B4D3E - dark green 

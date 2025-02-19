@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar{
+  display: none;
+}
+body {
+  background-color: #242424;
+}
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+@keyframes spinWords {
+  10% {
+    transform: translateY(-102%);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  35% {
+    transform: translateY(-202%);
+  }
+  50% {
+    transform: translateY(-200%);
+  }
+  60% {
+    transform: translateY(-302%);
+  }
+  75% {
+    transform: translateY(-300%);
+  }
+  85% {
+    transform: translateY(-402%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}
+
+.animate-spin-words {
+  animation: spinWords 4s infinite;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 94.1 25.5% 47.8%; /* Muted Olive Green */
+    --primary-foreground: 60.2 31.7% 86.9%; /* Light Sage */
+    --secondary: 88.6 23.4% 78.4%; /* Light Olive */
+    --secondary-foreground: 84.1 40.1% 32.4%;
+    --muted: 65.2 29.3% 86.4%; /* Light Sage */
+    --muted-foreground: 76.5 23.1% 23.7%;
+    --accent: 74.5 10.5% 72.2%; /* Lighter muted green */
+    --accent-foreground: 44.1 16.4% 17.4%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 94.1 25.5% 47.8%; /* Muted Olive Green */
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 94.1 21.5% 52.5%; /* Muted Olive Green */
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 88.6 19.8% 31.9%; /* Darker Light Olive */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 68.4 24.2% 32.9%; /* Slightly darker Light Sage */
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 74.5 10.5% 72.2%; /* Lighter muted green */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 94.1 25.5% 47.8%; /* Muted Olive Green */
+  }
+}

@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+#db
+.drizzle.config.js
+
 # next.js
 /.next/
 /out/
