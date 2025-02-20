@@ -8,6 +8,8 @@ import Footer from '@/components/common/Footer'
 import ShopNav from '@/components/common/ShopNav'
 import ShopFooter from '@/components/common/ShopFooter'
 import './globals.css'
+import { Toaster } from "@/components/ui/toaster"
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,6 +33,7 @@ export default async function RootLayout({ children }) {
               <div className="relative flex flex-col min-h-screen bg-[#FFF2F2]">
                 <MainNav className="relative z-10" />
                 <main className="flex-1 relative z-10">{children}</main>
+                <Toaster />
                 <Footer className="relative z-10" />
               </div>
             )}

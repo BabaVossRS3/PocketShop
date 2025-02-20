@@ -1,3 +1,4 @@
+// MainNav.jsx
 "use client"
 import React from 'react';
 import Link from 'next/link';
@@ -31,6 +32,9 @@ const MainNav = () => {
     }
   };
 
+  const handleSignup = () => {
+    router.push('/signup');
+  };
 
   return (
     <div className="fixed w-full z-50 flex justify-center p-2">
@@ -61,7 +65,10 @@ const MainNav = () => {
                 {session ? 'Dashboard' : 'Σύνδεση'}
               </Button>
               {!session && (
-                <Button className="bg-[#7886C7] text-[#FFF2F2] hover:bg-[#2D336B]">
+                <Button 
+                  className="bg-[#7886C7] text-[#FFF2F2] hover:bg-[#2D336B]"
+                  onClick={handleSignup}
+                >
                   Ξεκινήστε
                 </Button>
               )}
@@ -88,10 +95,21 @@ const MainNav = () => {
                   Παρουσίαση
                 </Link>
                 <div className="space-y-2 mt-4">
-                  <LoginModal className="w-full" />
-                  <Button className="w-full bg-[#7886C7] text-[#FFF2F2] hover:bg-[#2D336B]">
-                    Ξεκινήστε
+                  <Button 
+                    className="w-full border-[#7886C7] text-[#7886C7] hover:bg-[#7886C7] hover:text-[#FFF2F2]"
+                    variant="outline"
+                    onClick={handleAuth}
+                  >
+                    {session ? 'Dashboard' : 'Σύνδεση'}
                   </Button>
+                  {!session && (
+                    <Button 
+                      className="w-full bg-[#7886C7] text-[#FFF2F2] hover:bg-[#2D336B]"
+                      onClick={handleSignup}
+                    >
+                      Ξεκινήστε
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>
