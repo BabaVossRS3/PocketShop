@@ -78,7 +78,7 @@ const AnimatedPage = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerVariants}
-        className="h-[40vh] flex items-center justify-center px-6 border-b border-[#A9B5DF]"
+        className="h-[80vh] flex items-center justify-center px-6 border-b border-[#A9B5DF]"
       >
         <div className="max-w-5xl mx-auto text-center space-y-8">
           <motion.h1 

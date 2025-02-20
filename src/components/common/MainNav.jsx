@@ -1,11 +1,36 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
+import { signIn, useSession } from 'next-auth/react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
 
 const MainNav = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const { data: session } = useSession();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Hide navigation on admin routes
+  if (pathname?.startsWith('/admin')) {
+    return null;
+  }
+
+  const handleAuth = async () => {
+    if (session) {
+      // If already logged in, redirect based on role
+      if (session.user.role === 'super_admin') {
+        router.push('/admin');
+      } else if (session.user.role === 'shop_owner') {
+        router.push('/dashboard');
+      }
+    } else {
+      // If not logged in, redirect to sign in page
+      router.push('/auth/signin');
+    }
+  };
+
 
   return (
     <div className="fixed w-full z-50 flex justify-center p-2">
@@ -28,12 +53,18 @@ const MainNav = () => {
               <Link href="/showcase" className="text-[#2D336B]/80 hover:text-[#7886C7] transition-colors">
                 Παρουσίαση
               </Link>
-              <Button variant="outline" className="border-[#7886C7] text-[#7886C7] hover:bg-[#7886C7] hover:text-[#FFF2F2]">
-                Σύνδεση
+              <Button 
+                variant="outline" 
+                className="border-[#7886C7] text-[#7886C7] hover:bg-[#7886C7] hover:text-[#FFF2F2]"
+                onClick={handleAuth}
+              >
+                {session ? 'Dashboard' : 'Σύνδεση'}
               </Button>
-              <Button className="bg-[#7886C7] text-[#FFF2F2] hover:bg-[#2D336B]">
-                Ξεκινήστε
-              </Button>
+              {!session && (
+                <Button className="bg-[#7886C7] text-[#FFF2F2] hover:bg-[#2D336B]">
+                  Ξεκινήστε
+                </Button>
+              )}
             </div>
 
             <div className="md:hidden">
@@ -57,9 +88,7 @@ const MainNav = () => {
                   Παρουσίαση
                 </Link>
                 <div className="space-y-2 mt-4">
-                  <Button variant="outline" className="w-full border-[#7886C7] text-[#7886C7] hover:bg-[#7886C7] hover:text-[#FFF2F2]">
-                    Σύνδεση
-                  </Button>
+                  <LoginModal className="w-full" />
                   <Button className="w-full bg-[#7886C7] text-[#FFF2F2] hover:bg-[#2D336B]">
                     Ξεκινήστε
                   </Button>
